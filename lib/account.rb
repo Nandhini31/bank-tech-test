@@ -12,14 +12,12 @@ attr_reader :balance,:history, :printer
 
   def deposit(amount)
     @balance +=amount
-
     @history << [date,float(amount),"",float(@balance)]
 
   end
 
   def withdraw(amount)
     @balance -=amount
-
     @history << [date,"",float(amount),float(@balance)]
   end
 
