@@ -21,7 +21,7 @@ describe Account do
 
     it 'adds the deposit transaction into history' do
       account.deposit(50)
-      expect(account.history).to include([Time.now.strftime("%d-%m-%y"),"50.00","","50.00"])
+      expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"50.00","","50.00"])
     end
 
   end
@@ -36,9 +36,19 @@ describe Account do
     it 'adds the deposit transaction into history' do
       account.deposit(100)
       account.withdraw(50)
-      expect(account.history).to include([Time.now.strftime("%d-%m-%y"),"","50.00","50.00"])
+      expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"","50.00","50.00"])
     end
 
   end
+
+  describe '#prints statement' do
+    let(:time){Time.now.strftime("%d/%m/%y")}
+    it 'adds the deposit transaction into history' do
+      account.deposit(100)
+      account.withdraw(50)
+      expect(account.printer).to eq([[time, "100.00", "", "100.00"], [time, "", "50.00", "50.00"]]);
+    end
   end
+
+end
 end

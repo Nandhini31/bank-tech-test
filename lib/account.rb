@@ -1,35 +1,37 @@
+require_relative 'printer'
+
 class Account
 
-attr_reader :balance,  :history
+attr_reader :balance,:history, :printer
 
-  def initialize
+  def initialize(printer = Printer.new)
     @balance = 0
     @history = []
+    @printer = printer
   end
 
   def deposit(amount)
     @balance +=amount
-    # puts "You have deposited £#{amount} in your account"
+
     @history << [date,float(amount),"",float(@balance)]
 
   end
 
   def withdraw(amount)
     @balance -=amount
-    # puts "You have withdrawn £#{amount} in your account"
+
     @history << [date,"",float(amount),float(@balance)]
   end
 
+  def printer
+    @printer.print_statement(@history)
+  end
 
-  def statement
-
-
-  end  
 
   private
 
   def date
-    Time.now.strftime("%d-%m-%y")
+    Time.now.strftime("%d/%m/%y")
   end
 
   def float(number)

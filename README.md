@@ -27,8 +27,6 @@ Account holder
 
 Bank Account
 
-Account History
-
 Printer
 
 Messages
@@ -40,6 +38,6 @@ Withdrawal
 
 calculate current balance
 
-print account history
+print account statement
 
 ```
