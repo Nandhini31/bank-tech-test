@@ -1,5 +1,6 @@
 
 class Printer
+
   def print_statement(history)
     puts "date || credit || debit || balance" + "\n"
     history.each do |outer_array|

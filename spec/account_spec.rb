@@ -1,7 +1,10 @@
 require 'account'
 
 describe Account do
-  subject(:account) {described_class.new}
+
+  subject(:account) {described_class.new(printer)}
+  let(:printer) { double :printer}
+
 
   describe '#initialize' do
     it 'starts with a  balance of 0' do
@@ -39,11 +42,9 @@ end
   end
 
   describe '#prints statement' do
-    let(:time){Time.now.strftime("%d/%m/%y")}
-    it 'adds the deposit transaction into history' do
-      account.deposit(100)
-      account.withdraw(50)
-      expect(account.printer).to eq([[time, "100.00", "", "100.00"], [time, "", "50.00", "50.00"]]);
+    it 'prints the account statement' do
+      expect(printer).to receive(:print_statement)
+      account.printer
     end
   end
 end

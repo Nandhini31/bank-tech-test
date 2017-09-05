@@ -57,18 +57,16 @@ git clone https://github.com/Nandhini31/bank-tech-test.git
 
 cd  project directory
 
-bundle install or bundle(if bundle is already installed)
+irb
 
 rspec # to run unit tests from project directory
 
 
-new_account = Account.new
+new_account = Account.new # creates a new account
 new_account.deposit(1000)
 new_account.withdraw(500)
 new_account.printer
 
-new_account.balance #to check balance
-new_account.history #to check transaction history
 
 
 ```

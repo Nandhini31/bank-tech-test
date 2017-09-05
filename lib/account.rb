@@ -2,7 +2,7 @@ require_relative 'printer'
 
 class Account
 
-attr_reader :balance,:history
+  attr_reader :balance,:history
 
   def initialize(printer = Printer.new)
     @balance = 0
@@ -15,7 +15,6 @@ attr_reader :balance,:history
     @history << [date,float(amount),"",float(@balance)]
   end
 
-
   def withdraw(amount)
     @balance -=amount
     @history << [date,"",float(amount),float(@balance)]
@@ -24,7 +23,6 @@ attr_reader :balance,:history
   def printer
     @printer.print_statement(@history)
   end
-
 
   private
 
@@ -35,5 +33,4 @@ attr_reader :balance,:history
   def float(number)
     sprintf('%.2f', number)
   end
-
 end
