@@ -11,7 +11,7 @@ describe Account do
     it 'starts with en empty history' do
       expect(account.history).to eq []
     end
-
+end
 
 
   describe '#deposit' do
@@ -23,9 +23,7 @@ describe Account do
       account.deposit(50)
       expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"50.00","","50.00"])
     end
-
   end
-
 
   describe '#withdrawal' do
     it 'Account holder can deposit money into account' do
@@ -38,7 +36,6 @@ describe Account do
       account.withdraw(50)
       expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"","50.00","50.00"])
     end
-
   end
 
   describe '#prints statement' do
@@ -49,6 +46,4 @@ describe Account do
       expect(account.printer).to eq([[time, "100.00", "", "100.00"], [time, "", "50.00", "50.00"]]);
     end
   end
-
-end
 end

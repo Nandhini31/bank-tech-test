@@ -2,7 +2,7 @@ require_relative 'printer'
 
 class Account
 
-attr_reader :balance,:history, :printer
+attr_reader :balance,:history
 
   def initialize(printer = Printer.new)
     @balance = 0
@@ -13,8 +13,8 @@ attr_reader :balance,:history, :printer
   def deposit(amount)
     @balance +=amount
     @history << [date,float(amount),"",float(@balance)]
-
   end
+
 
   def withdraw(amount)
     @balance -=amount
