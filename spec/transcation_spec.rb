@@ -1,9 +1,7 @@
 require 'transaction'
-
 describe Transaction do
-
-  let(:amount){ 500 }
-  let(:balance){ 1000 }
+  let(:amount) { 500 }
+  let(:balance) { 1000 }
   subject(:transaction) { described_class.new('deposit', amount, balance) }
   subject(:transaction_withdraw) { described_class.new('withdraw', amount, balance) }
 

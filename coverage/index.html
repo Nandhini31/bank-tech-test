@@ -14,7 +14,7 @@
       <img src="./assets/0.10.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-06T14:45:48+01:00">2017-09-06T14:45:48+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-09-06T14:51:32+01:00">2017-09-06T14:51:32+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -103,7 +103,7 @@
       <tr>
         <td class="strong"><a href="#13e7d30c28125d9068bee49482fbe2e2c6360af1" class="src_link" title="spec/transcation_spec.rb">spec/transcation_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>21</td>
+        <td>19</td>
         <td>12</td>
         <td>12</td>
         <td>0</td>
@@ -782,7 +782,7 @@
         <li class="covered" data-hits="4" data-linenumber="22">
           <span class="hits">4</span>
           
-          <code class="ruby">      expect{account.deposit 50}.to change {account.balance}.from(0).to(50)</code>
+          <code class="ruby">      expect{ account.deposit 50 }.to change { account.balance }.from(0).to(50)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="23">
@@ -812,7 +812,7 @@
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(account.history).to include([Time.now.strftime(&quot;%d/%m/%y&quot;),&quot;50.00&quot;,&quot;&quot;,&quot;50.00&quot;])</code>
+          <code class="ruby">      expect(account.history).to include([Time.now.strftime(&#39;%d/%m/%y&#39;), &#39;50.00&#39;, &#39;&#39;, &#39;50.00&#39;])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
@@ -890,7 +890,7 @@
         <li class="covered" data-hits="1" data-linenumber="40">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(account.history).to include([Time.now.strftime(&quot;%d/%m/%y&quot;),&quot;&quot;,&quot;50.00&quot;,&quot;50.00&quot;])</code>
+          <code class="ruby">      expect(account.history).to include([Time.now.strftime(&#39;%d/%m/%y&#39;), &#39;&#39;, &#39;50.00&#39;, &#39;50.00&#39;])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="41">
@@ -999,7 +999,7 @@
         <li class="covered" data-hits="2" data-linenumber="4">
           <span class="hits">2</span>
           
-          <code class="ruby">  let(:history) {[[&quot;04-09-17&quot;, &quot;1000.00&quot;, &quot;&quot;, &quot;1000.00&quot;]]}</code>
+          <code class="ruby">  let(:history) { [[&#39;04-09-17&#39;, &#39;1000.00&#39;, &#39;&#39;, &#39;1000.00&#39;]] }</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="5">
@@ -1075,121 +1075,109 @@
           <code class="ruby">require &#39;transaction&#39;</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="2">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
           <code class="ruby">describe Transaction do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="4" data-linenumber="5">
+        <li class="covered" data-hits="4" data-linenumber="3">
           <span class="hits">4</span>
           
-          <code class="ruby">  let(:amount){ 500 }</code>
+          <code class="ruby">  let(:amount) { 500 }</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="6">
+        <li class="covered" data-hits="4" data-linenumber="4">
           <span class="hits">4</span>
           
-          <code class="ruby">  let(:balance){ 1000 }</code>
+          <code class="ruby">  let(:balance) { 1000 }</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
+        <li class="covered" data-hits="3" data-linenumber="5">
           <span class="hits">3</span>
           
           <code class="ruby">  subject(:transaction) { described_class.new(&#39;deposit&#39;, amount, balance) }</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
+        <li class="covered" data-hits="2" data-linenumber="6">
           <span class="hits">2</span>
           
           <code class="ruby">  subject(:transaction_withdraw) { described_class.new(&#39;withdraw&#39;, amount, balance) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;returns initializes with transaction type&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(transaction.transaction_type).to eq(&#39;deposit&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;returns an array for the deposits&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="15">
+        <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(transaction.list).to eq([Time.now.strftime(&#39;%d/%m/%y&#39;), &#39;500.00&#39;, &#39;&#39;, &#39;1000.00&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
+        <li class="covered" data-hits="1" data-linenumber="16">
           <span class="hits">1</span>
           
           <code class="ruby">  it &#39;returns an array for the withdraw&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="17">
           <span class="hits">1</span>
           
           <code class="ruby">    expect(transaction_withdraw.list).to eq([Time.now.strftime(&#39;%d/%m/%y&#39;), &#39;&#39;, &#39;500.00&#39;, &#39;1000.00&#39;])</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="20">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>

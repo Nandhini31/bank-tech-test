@@ -19,12 +19,12 @@ end
 
   describe '#deposit' do
     it 'Account holder can deposit money into account' do
-      expect{account.deposit 50}.to change {account.balance}.from(0).to(50)
+      expect{ account.deposit 50 }.to change { account.balance }.from(0).to(50)
     end
 
     it 'adds the deposit transaction into history' do
       account.deposit(50)
-      expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"50.00","","50.00"])
+      expect(account.history).to include([Time.now.strftime('%d/%m/%y'), '50.00', '', '50.00'])
     end
   end
 
@@ -37,7 +37,7 @@ end
     it 'adds the deposit transaction into history' do
       account.deposit(100)
       account.withdraw(50)
-      expect(account.history).to include([Time.now.strftime("%d/%m/%y"),"","50.00","50.00"])
+      expect(account.history).to include([Time.now.strftime('%d/%m/%y'), '', '50.00', '50.00'])
     end
   end
 

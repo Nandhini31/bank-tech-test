@@ -1,7 +1,7 @@
 require 'printer'
 
 describe Printer do
-  let(:history) {[["04-09-17", "1000.00", "", "1000.00"]]}
+  let(:history) { [['04-09-17', '1000.00', '', '1000.00']] }
   subject(:printer) { described_class.new }
 
   it 'returns history' do
