@@ -27,6 +27,8 @@ of date, time, balance in chronological order, anytime.
 
   Bank Account
 
+  Transaction
+
   Printer
 
   Messages
@@ -52,22 +54,32 @@ of date, time, balance in chronological order, anytime.
 
 ## How to install and run
 ```
+# Clone this repository
+$ git clone https://github.com/Nandhini31/bank-tech-test.git
 
-git clone https://github.com/Nandhini31/bank-tech-test.git
-
+# navigate to project folder
 cd  project directory
 
-irb
+# Open irb
+$ irb
 
-rspec # to run unit tests from project directory
+2.4.0 :002 > require './lib/account.rb'
+ => true
+ 
+2.4.0 :003 > my_account = Account.new
+ => #<Account:0x007f924f913528 @balance=0, @history=[], @printer=#<Printer:0x007f924f9134d8>>
 
+2.4.0 :004 > my_account.deposit(1000)
+ => [["06/09/17", "1000.00", "", "1000.00"]]
 
-new_account = Account.new # creates a new account
-new_account.deposit(1000)
-new_account.withdraw(500)
-new_account.printer
+2.4.0 :005 > my_account.withdraw(50)
+ => [["06/09/17", "1000.00", "", "1000.00"], ["06/09/17", "", "50.00", "950.00"]]
 
-
+2.4.0 :006 > my_account.printer
+date || credit || debit || balance
+06/09/17 ||  || 50.00 || 950.00
+06/09/17 || 1000.00 ||  || 1000.00
+ => [["06/09/17", "", "50.00", "950.00"], ["06/09/17", "1000.00", "", "1000.00"]]
 
 ```
 
