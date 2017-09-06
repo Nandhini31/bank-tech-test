@@ -65,7 +65,7 @@ $ irb
 
 2.4.0 :002 > require './lib/account.rb'
  => true
- 
+
 2.4.0 :003 > my_account = Account.new
  => #<Account:0x007f924f913528 @balance=0, @history=[], @printer=#<Printer:0x007f924f9134d8>>
 
@@ -82,6 +82,3 @@ date || credit || debit || balance
  => [["06/09/17", "", "50.00", "950.00"], ["06/09/17", "1000.00", "", "1000.00"]]
 
 ```
-
-## What can be improved
-* Make it more interactive. i.e more messages to user when a withdrawal and deposit is made and display the balance
