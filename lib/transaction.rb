@@ -10,13 +10,13 @@ class Transaction
   end
 
   def list
-    return [date,float(@amount),"",float(@balance)] if @transaction_type ==  "deposit"
-    return [date,"",float(@amount),float(@balance)] if @transaction_type ==  "withdraw"
+    return [date,float(@amount),'',float(@balance)] if @transaction_type ==  'deposit'
+    return [date,'',float(@amount),float(@balance)] if @transaction_type ==  'withdraw'
   end
 
  private
    def date
-     Time.now.strftime("%d/%m/%y")
+     Time.now.strftime('%d/%m/%y')
    end
 
    def float(number)

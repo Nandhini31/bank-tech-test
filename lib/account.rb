@@ -13,13 +13,13 @@ class Account
 
   def deposit(amount)
     @balance +=amount
-    new_transaction = Transaction.new("deposit",amount,balance)
+    new_transaction = Transaction.new('deposit',amount,balance)
     @history << new_transaction.list
   end
 
   def withdraw(amount)
     @balance -=amount
-    new_transaction = Transaction.new("withdraw",amount,balance)
+    new_transaction = Transaction.new('withdraw',amount,balance)
     @history << new_transaction.list
   end
 
