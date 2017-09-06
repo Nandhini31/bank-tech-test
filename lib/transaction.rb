@@ -1,4 +1,3 @@
-
 class Transaction
 
   attr_reader :transaction_type, :balance, :amount
@@ -10,8 +9,8 @@ class Transaction
   end
 
   def list
-    return [date,float(@amount),'',float(@balance)] if @transaction_type ==  'deposit'
-    return [date,'',float(@amount),float(@balance)] if @transaction_type ==  'withdraw'
+    return [date, float(@amount), '', float(@balance)] if @transaction_type ==  'deposit'
+    return [date, '', float(@amount), float(@balance)] if @transaction_type ==  'withdraw'
   end
 
  private

@@ -14,17 +14,17 @@ class Account
   def deposit(amount)
     @balance +=amount
     new_transaction = Transaction.new('deposit',amount,balance)
-    @history << new_transaction.list
+    history << new_transaction.list
   end
 
   def withdraw(amount)
     @balance -=amount
     new_transaction = Transaction.new('withdraw',amount,balance)
-    @history << new_transaction.list
+    history << new_transaction.list
   end
 
   def printer
-    @printer.print_statement(@history.reverse)
+    @printer.print_statement(history.reverse)
   end
 
 end
