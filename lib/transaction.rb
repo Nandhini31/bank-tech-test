@@ -3,7 +3,7 @@ class Transaction
 
   attr_reader :transaction_type, :balance, :amount
 
-  def initialize(transaction_type,amount,balance)
+  def initialize(transaction_type, amount, balance)
     @transaction_type = transaction_type
     @amount = amount
     @balance = balance
@@ -15,6 +15,7 @@ class Transaction
   end
 
  private
+
    def date
      Time.now.strftime('%d/%m/%y')
    end

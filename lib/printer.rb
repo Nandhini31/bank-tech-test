@@ -10,7 +10,7 @@ class Printer
   private
 
   def header
-     puts "date || credit || debit || balance" + "\n"
+     puts 'date || credit || debit || balance'
   end
 
   def transactions(history)

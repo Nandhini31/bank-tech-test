@@ -5,11 +5,9 @@
         1,
         null,
         1,
-        null,
         8,
         8,
         null,
-        null,
         1,
         1,
         1,
@@ -17,7 +15,6 @@
         null,
         1,
         1,
-        null,
         null,
         null,
         null,
@@ -127,6 +124,7 @@
         null,
         null,
         1,
+        null,
         1,
         8,
         null,
@@ -138,15 +136,12 @@
       ],
       "/Users/Nandhini/Projects/bank-tech-test/spec/printer_spec.rb": [
         1,
-        null,
         1,
         2,
         2,
         null,
         1,
         2,
-        null,
-        null,
         null,
         null
       ],
@@ -172,6 +167,6 @@
         null
       ]
     },
-    "timestamp": 1504705892
+    "timestamp": 1504706499
   }
 }
