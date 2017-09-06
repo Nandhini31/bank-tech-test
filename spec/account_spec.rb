@@ -31,7 +31,7 @@ end
   describe '#withdrawal' do
     it 'Account holder can deposit money into account' do
       account.deposit(50)
-      expect{account.withdraw 50}.to change {account.balance}.from(50).to(0)
+      expect{ account.withdraw(50) }.to change {account.balance}.from(50).to(0)
     end
 
     it 'adds the deposit transaction into history' do
@@ -43,8 +43,9 @@ end
 
   describe '#prints statement' do
     it 'prints the account statement' do
-      expect(printer).to receive(:print_statement)
+      allow(printer).to receive(:print_statement)
       account.printer
+      expect(printer).to have_received(:print_statement)
     end
   end
 end

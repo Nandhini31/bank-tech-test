@@ -1,4 +1,5 @@
 require_relative 'printer'
+require_relative 'transaction'
 
 class Account
 
@@ -12,25 +13,18 @@ class Account
 
   def deposit(amount)
     @balance +=amount
-    @history << [date,float(amount),"",float(@balance)]
+    new_transaction = Transaction.new("deposit",amount,balance)
+    @history << new_transaction.list
   end
 
   def withdraw(amount)
     @balance -=amount
-    @history << [date,"",float(amount),float(@balance)]
+    new_transaction = Transaction.new("withdraw",amount,balance)
+    @history << new_transaction.list
   end
 
   def printer
-    @printer.print_statement(@history)
+    @printer.print_statement(@history.reverse)
   end
 
-  private
-
-  def date
-    Time.now.strftime("%d/%m/%y")
-  end
-
-  def float(number)
-    sprintf('%.2f', number)
-  end
 end
